@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+      
+      <record id="book_category_action" model="ir.actions.act_window">
+          <field name="name">Book category</field>
+          <field name="res_model">book.category</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+      <record id="libray_category_form" model="ir.ui.view">
+          <field name="name">book.category.form</field>
+          <field name="model">book.category</field>
+          <field name="arch" type="xml">
+              <form>
+                  <group>
+                      <field name="name"/>
+                      <field name="book_number"/>
+                  </group>
+              </form>
+          </field>
+      </record>
+      <record id="book_category_tree" model="ir.ui.view">
+          <field name="name">book.category.tree</field>
+          <field name="model">book.category</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="book_number"/>
+              </tree>
+          </field>
+      </record>
+  </data>
+</odoo>

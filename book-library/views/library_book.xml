@@ -12,17 +12,28 @@
 
     <menuitem id="library_author_menu" name="Library Author" parent="library_book_menu" action="library_author_action"/>
 
+    <menuitem id="book_category_menu" name="Book Category" parent="library_book_menu" action="book_category_action"/>
+
     <record id="libray_book_form" model="ir.ui.view">
         <field name="name">library.book.form</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="title"/>
-                    <field name="author_id"/>
-                    <field name="price"/>
-                    <field name="is_discounted"/>
-                </group>
+                <header>
+                     <button name="compute_book_number_by_category" type="object" string="Compute Book by Category" class="btn btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                        <field name="author_id"/>
+                        <field name="price"/>
+                        <field name="category_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
       </record>
@@ -34,7 +45,7 @@
                   <field name="title"/>
                   <field name="author_id"/>
                   <field name="price"/>
-                  <field name="is_discounted"/>
+                  <field name="category_id"/>
               </tree>
           </field>
       </record>
